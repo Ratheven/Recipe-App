@@ -1,12 +1,29 @@
-import "./SearchBar.css"
+import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = ({ search, setSearch, setQuery }) => {
+  const handleSubmit = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const searchResult = (e) => {
+    e.preventDefault();
+    setQuery(search);
+    setSearch("")
+  };
+
   return (
     <>
       <div className="container">
-        <form className="search=form">
-          <input className="search-bar" />
-          <button className="search-button"></button>
+        <form className="search=form" onSubmit={searchResult}>
+          <input
+            className="search-bar"
+            type="text"
+            value={search}
+            onChange={handleSubmit}
+          />
+          <button className="search-button" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </>
