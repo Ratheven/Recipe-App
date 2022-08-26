@@ -6,7 +6,7 @@ const App = () => {
   const [recipes, setRecipes] = useState();
   const [status, setStatus] = useState("idle");
   const [search, setSearch]= useState('')
-  const [query,setQuery]= useState("chicken")
+  const [query,setQuery]= useState()
 
   useEffect(() => {
     getRecipes();
@@ -34,7 +34,8 @@ const App = () => {
           return <Recipe key={index} recipe={recipe} status={status} />;
         })}
       <Recipe />
-      <h1>wassasassup</h1>
+
+   
     </div>
   );
 };
