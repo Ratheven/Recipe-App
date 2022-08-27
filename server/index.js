@@ -1,8 +1,26 @@
+"use strict";
+
 const express = require('express');
-const app = express();
+// const app = express();
+const morgan = require("morgan");
 
-app.get('/',  (req, res) => {
-   res.send('Hello Wlllllld');
-})
+const { createUser } = require("./handlers/createUser");
+const {addFavoriteRecipe} = require("./handlers/addFavoriteRecipe")
 
-app.listen(8000)
+express()
+  .use(morgan("tiny"))
+  .use(express.json())
+  .use(express.static("public"))
+
+  .post("/user", createUser)
+  .patch("/user/favoriteRecipe/add", addFavoriteRecipe)
+
+
+  .get("*", (req, res) => {
+   res.status(404).json({
+     status: 404,
+     message: "This is obviously not what you are looking for.",
+   });
+ })
+
+  .listen(8000);
