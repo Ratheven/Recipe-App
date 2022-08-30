@@ -1,0 +1,34 @@
+.container-header {
+  background-color: #aba194;
+  height: 8vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+.umber-box {
+  background-color: #8c271e;
+  max-width: 100%;
+  padding-bottom: 2%;
+  color: #8c271e;
+}
+.search-headers {
+  display: flex;
+  justify-content: space-between;
+  width: 24%;
+}
+.searchbar-margin {
+}
+
+.list {
+  height: 5vh;
+  background-color: #aba194;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.notes-list{
+  padding: 0 9%;
+}
