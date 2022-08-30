@@ -3,7 +3,8 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from '@mui/material/DialogActions';
-import ShoppingList from "./ShoppingList";
+import AddFavoriteRecipe from "./AddFavoriteRecipe";
+import "./css/Recipe.css"
 
 const Recipe = ({ recipe, status }) => {
   const [show, setShow] = useState(false);
@@ -15,7 +16,7 @@ const Recipe = ({ recipe, status }) => {
     console.log(dish,"hell")
     // console.log(Math.round(recipe.recipe.calories))
     return (
-      <>
+      <div className="recipeContainer">
         <Dialog open={show}>
           <DialogTitle>Ingredients</DialogTitle>
           <DialogContent>
@@ -49,9 +50,9 @@ const Recipe = ({ recipe, status }) => {
      
           <img src={dish.image} alt="" />
           <button onClick={() => setShow(true)}>Ingredients</button>
-          <ShoppingList dish={dish}/>
+          <AddFavoriteRecipe dish={dish}/>
         </div>
-      </>
+      </div>
     );
   }
 };

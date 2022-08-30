@@ -1,10 +1,14 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
-const ShoppingList = ({ dish }) => {
+const AddFavoriteRecipe = ({ dish }) => {
   console.log(dish, "dishh");
   const { isAuthenticated, user } = useAuth0();
+  const recipeDetail = {
+    ingredients: dish.ingredients,
+    name: dish.label,
+  };
+
   const handleSubmit = () => {
-    console.log("koko")
     if (isAuthenticated) {
       fetch(`/user/favoriteRecipe/add`, {
         method: "PATCH",
@@ -13,8 +17,7 @@ const ShoppingList = ({ dish }) => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          ingredients: dish.ingredients,
-          name: dish.ingredients,
+          ingredients: recipeDetail,
           sub: user.sub,
           dish: dish,
         }),
@@ -24,4 +27,4 @@ const ShoppingList = ({ dish }) => {
 
   return <button onClick={() => handleSubmit()}>Add</button>;
 };
-export default ShoppingList;
+export default AddFavoriteRecipe;

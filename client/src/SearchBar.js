@@ -1,4 +1,4 @@
-import "./SearchBar.css";
+import "./css/SearchBar.css";
 
 const SearchBar = ({ search, setSearch, setQuery }) => {
   const handleSubmit = (e) => {
@@ -13,8 +13,8 @@ const SearchBar = ({ search, setSearch, setQuery }) => {
 
   return (
     <>
-      <div className="container">
-        <form className="search=form" onSubmit={searchResult}>
+      <div className="container-form">
+        <form className="search-form" onSubmit={searchResult}>
           <input
             className="search-bar"
             type="text"
