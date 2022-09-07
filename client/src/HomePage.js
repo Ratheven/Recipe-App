@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import Recipe from "./Recipe";
 import { useAuth0 } from "@auth0/auth0-react";
+import SearchBar from "./SearchBar";
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState();
@@ -22,7 +23,6 @@ const HomePage = () => {
       const result = await response.json();
       setRecipes(result.hits);
       setStatus("loading");
-      console.log(result.hits);
     } catch (err) {
       console.log(err);
     }
@@ -30,7 +30,7 @@ const HomePage = () => {
 
   //Post a new user//
   useEffect(() => {
-    if (isAuthenticated) {
+    if (!isAuthenticated) {
       fetch(`/user`, {
         method: "POST",
         headers: {
@@ -45,12 +45,13 @@ const HomePage = () => {
   }, [isAuthenticated]);
   //isAutnticated
   return (
-    <div>
+    <div className="hello">
       <Header search={search} setSearch={setSearch} setQuery={setQuery} />
+      <SearchBar search={search} setSearch={setSearch} setQuery={setQuery} />
       {status === "loading" &&
         recipes.map((recipe, index) => {
           return (
-            <div className="recipeWrapper">
+            <div className="grid">
               <Recipe key={index} recipe={recipe} status={status} />;
             </div>
           );

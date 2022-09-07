@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import List from "./List";
+import "./css/GroceryList.css";
 
 const GroceryList = () => {
   const [list, setlist] = useState([]);
   const [inputData, setInputData] = useState("");
-
-  const { user  } = useAuth0();
-
-  const handleSubmit = (e) => {
+  const { user } = useAuth0();
+const handleSubmit = (e) => {
     e.preventDefault();
     const newList = [...list, { title: inputData }];
     setlist(newList);
@@ -15,15 +15,8 @@ const GroceryList = () => {
     console.log(list, "listlist");
   };
 
-  const getAllIngredients = async ()=> {
-      const response = await fetch(`/ingredients/${user.sub}`)
-      const result = await response.json()
-  }
-  useEffect(()=> {
-    getAllIngredients()
-  },[])
   return (
-    <div>
+    <div className="Wrapper">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -35,13 +28,13 @@ const GroceryList = () => {
         <button type="submit">submit</button>
       </form>
       {list.map((item, index) => {
-        console.log(item, "plplplpl");
         return (
           <div key={index}>
             <p>{item.title}</p>
           </div>
         );
       })}
+      <List />
     </div>
   );
 };

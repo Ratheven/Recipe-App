@@ -2,23 +2,28 @@ import React, { useEffect, useState } from "react";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
-import DialogActions from '@mui/material/DialogActions';
+import DialogActions from "@mui/material/DialogActions";
 import AddFavoriteRecipe from "./AddFavoriteRecipe";
-import "./css/Recipe.css"
+import "./css/Recipe.css";
 
 const Recipe = ({ recipe, status }) => {
   const [show, setShow] = useState(false);
 
-
-
   if (status) {
     const dish = recipe.recipe;
-    console.log(dish,"hell")
+
     // console.log(Math.round(recipe.recipe.calories))
     return (
       <div className="recipeContainer">
+        <h1>{dish.label}</h1>
+
+        <img src={dish.image} alt="" />
+        <div>
+          <button onClick={() => setShow(true)}>Ingredients</button>
+          <AddFavoriteRecipe dish={dish} />
+        </div>
         <Dialog open={show}>
-          <DialogTitle>Ingredients</DialogTitle>
+          <DialogTitle className="title">Ingredients</DialogTitle>
           <DialogContent>
             <table>
               <thead>
@@ -27,7 +32,6 @@ const Recipe = ({ recipe, status }) => {
               </thead>
               <tbody>
                 {dish.ingredients.map((ingredient) => {
-                 
                   return (
                     <tr>
                       <td>{ingredient.text}</td>
@@ -39,19 +43,12 @@ const Recipe = ({ recipe, status }) => {
             </table>
           </DialogContent>
           <DialogActions>
-          <button onClick={()=> setShow(false)}>Close</button>
-          <button onClick={()=> window.open(dish.url)} autoFocus>
-            See More
-          </button>
-        </DialogActions>
+            <button onClick={() => setShow(false)}>Close</button>
+            <button onClick={() => window.open(dish.url)} autoFocus>
+              See More
+            </button>
+          </DialogActions>
         </Dialog>
-        <div>
-          <h1>{dish.label}</h1>
-     
-          <img src={dish.image} alt="" />
-          <button onClick={() => setShow(true)}>Ingredients</button>
-          <AddFavoriteRecipe dish={dish}/>
-        </div>
       </div>
     );
   }
