@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
 const AddFavoriteRecipe = ({ dish }) => {
-  console.log(dish, "dishh");
+ 
   const { isAuthenticated, user } = useAuth0();
   const recipeDetail = {
     ingredients: dish.ingredients,
