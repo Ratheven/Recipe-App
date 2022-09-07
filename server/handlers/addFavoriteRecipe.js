@@ -18,9 +18,9 @@ const addFavoriteRecipe = async (req, res) => {
       .collection("users")
       .updateOne(queryObj, updateObj);
 
-    const { acknowledged, modifiedCount } = updateResult;
 
-    console.log("helllo");
+
+
     return res.status(200).json({ message: `Added dish to user`, data: null });
   } catch (error) {
     console.log(error);

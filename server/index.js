@@ -6,6 +6,7 @@ const morgan = require("morgan");
 
 const { createUser } = require("./handlers/createUser");
 const {addFavoriteRecipe} = require("./handlers/addFavoriteRecipe")
+const{ingredients}=require("./handlers/ingredients")
 
 express()
   .use(morgan("tiny"))
@@ -14,6 +15,7 @@ express()
 
   .post("/user", createUser)
   .patch("/user/favoriteRecipe/add", addFavoriteRecipe)
+  .get('/ingredients/:sub', ingredients)
 
 
   .get("*", (req, res) => {
