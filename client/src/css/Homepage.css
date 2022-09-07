@@ -1,6 +1,12 @@
-.grid{
-  width: 600px;
-  height: 600px;
-display: flex;
+.grid {
+width: fit-content;
+height: fit-content;
+margin: 10px;
   background-color: aqua;
+}
+
+.gridContainer{
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  
 }

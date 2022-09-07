@@ -15,10 +15,9 @@ const Recipe = ({ recipe, status }) => {
     // console.log(Math.round(recipe.recipe.calories))
     return (
       <div className="recipeContainer">
-        <h1>{dish.label}</h1>
-
-        <img src={dish.image} alt="" />
-        <div>
+        <h1 className="label">{dish.label}</h1>
+        <img src={dish.image} alt="dish" className="image" />
+        <div className="buttonLayout">
           <button onClick={() => setShow(true)}>Ingredients</button>
           <AddFavoriteRecipe dish={dish} />
         </div>
