@@ -1,7 +1,6 @@
 .container-header {
   background-color: #aba194;
   height: 6vh;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,14 +8,11 @@
 }
 .umber-box {
   background-color: #8c271e;
-  max-width: 100%;
   padding-bottom: 2%;
   color: #8c271e;
 }
 .search-headers {
   display: flex;
-
-
 }
 
 

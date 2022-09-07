@@ -4,11 +4,14 @@ import Recipe from "./Recipe";
 import { useAuth0 } from "@auth0/auth0-react";
 import SearchBar from "./SearchBar";
 
+import "./css/Homepage.css"
+
+
 const HomePage = () => {
   const [recipes, setRecipes] = useState();
   const [status, setStatus] = useState("idle");
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState("salade");
   const { isAuthenticated, user } = useAuth0();
 
   useEffect(() => {
@@ -30,7 +33,7 @@ const HomePage = () => {
 
   //Post a new user//
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (isAuthenticated) {
       fetch(`/user`, {
         method: "POST",
         headers: {
@@ -45,18 +48,23 @@ const HomePage = () => {
   }, [isAuthenticated]);
   //isAutnticated
   return (
-    <div className="hello">
-      <Header search={search} setSearch={setSearch} setQuery={setQuery} />
+    <>
+    <Header search={search} setSearch={setSearch} setQuery={setQuery} />
       <SearchBar search={search} setSearch={setSearch} setQuery={setQuery} />
+    <div className="gridContainer">
+
       {status === "loading" &&
         recipes.map((recipe, index) => {
           return (
             <div className="grid">
-              <Recipe key={index} recipe={recipe} status={status} />;
+              <Recipe key={index} recipe={recipe} status={status} />
             </div>
           );
         })}
-    </div>
+        </div>
+   
+        </>
   );
 };
+
 export default HomePage;
