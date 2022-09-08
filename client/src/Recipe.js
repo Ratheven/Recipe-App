@@ -18,7 +18,7 @@ const Recipe = ({ recipe, status }) => {
         <h1 className="label">{dish.label}</h1>
         <img src={dish.image} alt="dish" className="image" />
         <div className="buttonLayout">
-          <button onClick={() => setShow(true)}>Ingredients</button>
+          <button className="buttonIngredients" onClick={() => setShow(true)}>Ingredients</button>
           <AddFavoriteRecipe dish={dish} />
         </div>
         <Dialog open={show}>

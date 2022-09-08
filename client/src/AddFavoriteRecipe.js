@@ -1,12 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect, useState } from "react";
+import "./css/AddFavoriteRecipe.css";
+import { AiOutlineCheck } from "react-icons/ai";
 
 const AddFavoriteRecipe = ({ dish }) => {
- 
   const { isAuthenticated, user } = useAuth0();
   const recipeDetail = {
     ingredients: dish.ingredients,
     name: dish.label,
   };
+  const [isActive, setIsActive] = useState(false);
 
   const handleSubmit = () => {
     if (isAuthenticated) {
@@ -23,8 +26,20 @@ const AddFavoriteRecipe = ({ dish }) => {
         }),
       });
     }
+    setIsActive((current) => !current);
+    setTimeout(()=> {
+      setIsActive(false)
+    },"2000")
   };
 
-  return <button onClick={() => handleSubmit()}>Add</button>;
+  return (
+    <button
+      className={isActive ? "button" : "active"}
+      id="btn"
+      onClick={() => handleSubmit()}
+    >
+      {isActive ? <AiOutlineCheck /> : " Add"}
+    </button>
+  );
 };
 export default AddFavoriteRecipe;

@@ -13,15 +13,15 @@ const SearchBar = ({ search, setSearch, setQuery }) => {
 
   return (
     <>
-      <div className="container-form">
-        <form className="search-form" onSubmit={searchResult}>
+      <div className="search-box">
+        <form className="search" onSubmit={searchResult}>
           <input
-            className="search-bar"
+            className="input-search"
             type="text"
             value={search}
             onChange={handleSubmit}
           />
-          <button className="search-button" type="submit">
+          <button className="btn-search" type="submit">
             Submit
           </button>
         </form>

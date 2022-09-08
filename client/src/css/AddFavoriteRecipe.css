@@ -1,0 +1,36 @@
+.button {
+  background-color: #1b8bf9;
+  border: none;
+  width: 35%;
+  border-radius: 5px;
+
+  color: #161b21;
+  text-decoration: none;
+  font-size: 1rem;
+  height: 2.3rem;
+  margin-right: 20px;
+  margin-left: 20px;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.active {
+  border: none;
+  width: 35%;
+  border-radius: 5px;
+  background: #8c271e;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  height: 2.3rem;
+  margin-right: 20px;
+  margin-left: 20px;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  padding: 0 20px;
+}
+.active:hover {
+  background-color: #ffffff;
+  color: #00515c;
+}

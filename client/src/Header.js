@@ -16,9 +16,9 @@ const Header = ({ search, setSearch, setQuery }) => {
         </div>
       </div>
       <div className="list">
-        <p onClick={() => history.push("/GroceryList")}>Grocery List</p>
+        <p className="notes-list" onClick={() => history.push("/GroceryList")}>Grocery List</p>
         <p className="notes-list">notes</p>
-        <p>schedule</p>
+        <p className="notes-list">schedule</p>
       </div>
     </>
   );
