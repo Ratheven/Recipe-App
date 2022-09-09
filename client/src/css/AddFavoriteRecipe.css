@@ -1,6 +1,6 @@
 .button {
   background-color: #1b8bf9;
-  border: none;
+  border: 1px solid white;
   width: 35%;
   border-radius: 5px;
 
@@ -16,7 +16,8 @@
 }
 
 .active {
-  border: none;
+  border: 1px solid white;
+
   width: 35%;
   border-radius: 5px;
   background: #8c271e;

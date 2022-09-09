@@ -11,7 +11,7 @@ const HomePage = () => {
   const [recipes, setRecipes] = useState();
   const [status, setStatus] = useState("idle");
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("salade");
+  const [query, setQuery] = useState("beef");
   const { isAuthenticated, user } = useAuth0();
 
   useEffect(() => {

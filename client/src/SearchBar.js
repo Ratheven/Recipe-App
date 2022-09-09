@@ -8,24 +8,24 @@ const SearchBar = ({ search, setSearch, setQuery }) => {
   const searchResult = (e) => {
     e.preventDefault();
     setQuery(search);
-    setSearch("")
+    setSearch("");
   };
 
   return (
     <>
-      <div className="search-box">
-        <form className="search" onSubmit={searchResult}>
-          <input
-            className="input-search"
-            type="text"
-            value={search}
-            onChange={handleSubmit}
-          />
-          <button className="btn-search" type="submit">
-            Submit
-          </button>
-        </form>
-      </div>
+      <form action="" class="search-bar" onSubmit={searchResult}>
+        <input
+          type="search"
+          name="search"
+          pattern=".*\S.*"
+          value={search}
+          onChange={handleSubmit}
+          required
+        />
+        <button class="search-btn" type="submit">
+          <span>Search</span>
+        </button>
+      </form>
     </>
   );
 };
