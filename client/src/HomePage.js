@@ -4,8 +4,7 @@ import Recipe from "./Recipe";
 import { useAuth0 } from "@auth0/auth0-react";
 import SearchBar from "./SearchBar";
 
-import "./css/Homepage.css"
-
+import "./css/Homepage.css";
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState();
@@ -49,21 +48,19 @@ const HomePage = () => {
   //isAutnticated
   return (
     <>
-    <Header search={search} setSearch={setSearch} setQuery={setQuery} />
+      <Header search={search} setSearch={setSearch} setQuery={setQuery} />
       <SearchBar search={search} setSearch={setSearch} setQuery={setQuery} />
-    <div className="gridContainer">
-
-      {status === "loading" &&
-        recipes.map((recipe, index) => {
-          return (
-            <div className="grid">
-              <Recipe key={index} recipe={recipe} status={status} />
-            </div>
-          );
-        })}
-        </div>
-   
-        </>
+      <div className="gridContainer">
+        {status === "loading" &&
+          recipes.map((recipe, index) => {
+            return (
+              <div className="grid">
+                <Recipe key={index} recipe={recipe} status={status} />
+              </div>
+            );
+          })}
+      </div>
+    </>
   );
 };
 

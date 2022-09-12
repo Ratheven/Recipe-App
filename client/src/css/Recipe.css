@@ -14,15 +14,36 @@
   background-color: #8c271e;
   border: 5px solid white;
 }
-table, th, td {
-  border: 1px solid;
+table
+th,
+td {
+  padding: 10px;
+  border: 1px solid black;
+  background-color: aliceblue;
 }
+tr{
+  padding: 10px;
+}
+td{
+  padding: 10px;
+}
+.table-content{
+  border: 1px solid black;
+  padding: 6px;
+}
+.footer{
+  display:flex ;
+  justify-content: space-between;
+  }
 .title {
   background-color: #8c271e;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
+}
+.ingredients-charts{
+  margin: 10px;
 }
 .label {
   max-width: 100%;
@@ -42,8 +63,7 @@ table, th, td {
   padding: 15px;
 }
 .buttonIngredients {
- 
- align-items: center;
+  align-items: center;
   justify-content: center;
   border: 1px solid white;
   width: 35%;
@@ -57,9 +77,28 @@ table, th, td {
   margin-left: 20px;
   transition: all 300ms ease-in-out;
   cursor: pointer;
-  padding: 0 ;
+  padding: 0;
 }
 .buttonIngredients:hover {
+  background-color: #ffffff;
+  color: #00515c;
+}
+.button{
+
+  justify-content: center;
+  border: 1px solid white;
+  width: 35%;
+  border-radius: 5px;
+  background: #8c271e;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  height: 2.3rem;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+
+}
+.button:hover{
   background-color: #ffffff;
   color: #00515c;
 }

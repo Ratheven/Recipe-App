@@ -25,7 +25,7 @@ const Recipe = ({ recipe, status }) => {
         </div>
         <Dialog open={show}>
           <DialogTitle className="title">Ingredients</DialogTitle>
-          <DialogContent>
+          <DialogContent className="ingredients-charts">
             <table>
               <tr>
                 <th>Ingredients</th>
@@ -35,16 +35,27 @@ const Recipe = ({ recipe, status }) => {
               {dish.ingredients.map((ingredient) => {
                 return (
                   <tr>
-                    <td>{ingredient.text}</td>
-                    <td>{Math.round(ingredient.weight)}</td>
+                    <td className="table-content">{ingredient.text}</td>
+                    <td className="table-content">
+                      {Math.round(ingredient.weight)}
+                    </td>
                   </tr>
                 );
               })}
             </table>
           </DialogContent>
-          <DialogActions>
-            <button onClick={() => setShow(false)}>Close</button>
-            <button onClick={() => window.open(dish.url)} autoFocus>
+          <DialogActions className="footer">
+            <button
+              className="button"
+              onClick={() => setShow(false)}
+            >
+              Close
+            </button>
+            <button
+              className="button"
+              onClick={() => window.open(dish.url)}
+              autoFocus
+            >
               See More
             </button>
           </DialogActions>
