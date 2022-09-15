@@ -1,3 +1,12 @@
-.header-sign-in{
-    
-}
+.header-sign{
+    padding: 10px;
+ }
+ .sign-out-button{
+    width: fit-content;
+    height: fit-content;
+    height: 40px;
+ }
+ .sign-out-button:hover{
+ 
+    color: white;
+ }

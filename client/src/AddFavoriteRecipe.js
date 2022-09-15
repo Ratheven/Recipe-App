@@ -23,18 +23,19 @@ const AddFavoriteRecipe = ({ dish }) => {
           ingredients: recipeDetail,
           sub: user.sub,
           dish: dish,
+          
         }),
       });
     }
     setIsActive((current) => !current);
-    setTimeout(()=> {
-      setIsActive(false)
-    },"2000")
+    setTimeout(() => {
+      setIsActive(false);
+    }, "2000");
   };
 
   return (
     <button
-      className={isActive ? "button" : "active"}
+      className={isActive ? "button-dish" : "active"}
       id="btn"
       onClick={() => handleSubmit()}
     >

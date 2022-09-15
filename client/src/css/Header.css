@@ -22,13 +22,25 @@
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  
-
-
 }
 
 .notes-list {
   padding: 0 9%;
   font-family: fantasy;
   font-size: 1.6em;
+  position: relative;
+  bottom: 10px;
+}
+.notes-list:hover {
+  color: white;
+}
+.logo {
+  height: 10rem;
+  width: 10rem;
+  position: relative;
+  bottom: 8px;
+  right: 20px;
+}
+.container-logo{
+
 }

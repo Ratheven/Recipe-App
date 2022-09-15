@@ -5,7 +5,7 @@ const addFavoriteRecipe = async (req, res) => {
   const client = await connectDb();
   const db = client.db("data-name");
   const { name, ingredients, sub, dish } = req.body;
-  console.log(dish, "hello");
+  console.log(name, "hello");
 
   const queryObj = {
     sub,

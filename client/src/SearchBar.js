@@ -21,6 +21,7 @@ const SearchBar = ({ search, setSearch, setQuery }) => {
           value={search}
           onChange={handleSubmit}
           required
+          className="search-input"
         />
         <button class="search-btn" type="submit">
           <span>Search</span>

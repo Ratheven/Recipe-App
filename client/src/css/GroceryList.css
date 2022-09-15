@@ -1,4 +1,23 @@
-.wrapper{
-    background-color: aquamarine;
-   
+.Gorcery-Wrapper {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: bold;
+  color: black;
+}
+.list-title {
+  font-weight: bolder;
+  padding: 10px 0 0 0;
+  font-size: 25px;
+}
+.grocery-input{
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background-color: #fff;
+    border: 2px solid var(--input-border);
+    border-radius: 4px;
 }

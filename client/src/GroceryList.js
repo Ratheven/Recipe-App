@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import List from "./List";
 import "./css/GroceryList.css";
+import { AiOutlinePlus } from 'react-icons/ai';
 
 const GroceryList = () => {
   const [list, setlist] = useState([]);
@@ -12,11 +13,11 @@ const handleSubmit = (e) => {
     const newList = [...list, { title: inputData }];
     setlist(newList);
     setInputData("");
-    console.log(list, "listlist");
+  
   };
 
   return (
-    <div className="Wrapper">
+    <div className="Gorcery-Wrapper">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -24,13 +25,15 @@ const handleSubmit = (e) => {
           onChange={(e) => {
             setInputData(e.target.value);
           }}
+          className="grocery-input"
         ></input>
-        <button type="submit">submit</button>
+        <button type="submit"><AiOutlinePlus/></button>
       </form>
       {list.map((item, index) => {
+       
         return (
           <div key={index}>
-            <p>{item.title}</p>
+            <p className="list-title">{item.title}</p>
           </div>
         );
       })}

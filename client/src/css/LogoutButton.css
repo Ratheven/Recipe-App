@@ -1,1 +1,12 @@
-.header-sign-out{}
+.header-sign{
+   padding: 10px;
+}
+.sign-in-button{
+   width: fit-content;
+   height: fit-content;
+   height: 40px;
+}
+.sign-in-button:hover{
+
+   color: white;
+}
