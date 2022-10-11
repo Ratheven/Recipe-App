@@ -3,7 +3,7 @@ import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import { useHistory } from "react-router-dom";
 
-const Header = ({ search, setSearch, setQuery }) => {
+const Header = () => {
   let history = useHistory();
   return (
     <>

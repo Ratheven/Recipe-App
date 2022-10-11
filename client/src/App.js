@@ -1,6 +1,5 @@
 import HomePage from "./HomePage";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-
 import GlobalStyles from "./GlobalStyles";
 import Header from "./Header";
 import GroceryList from "./GroceryList";
